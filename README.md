@@ -59,6 +59,4 @@ https://drive.google.com/file/d/1CUo88WqmGa75v_pQCU5ve1hMbiX7G0n4/view?usp=shari
 * Plotly
 * Streamlit
 
-## Author
 
-Hana Elkholy
