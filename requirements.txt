@@ -1,11 +1,8 @@
 streamlit
 pandas
 numpy
-catboost
 plotly
 joblib
-xgboost
-scikit-learn==1.6.1
-category-encoders==2.8.1
-imbalanced-learn==0.14.1
+scikit-learn==1.4.2
+imbalanced-learn
 pyarrow
