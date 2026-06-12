@@ -12,7 +12,7 @@ st.set_page_config(
 
 @st.cache_data
 def load_data():
-    return pd.read_csv("cleaned_credit_card_transactions.csv")
+    return pd.read_parquet("dashboard_data.parquet")
 
 df = load_data()
 
