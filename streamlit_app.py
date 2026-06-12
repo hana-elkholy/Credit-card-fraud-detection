@@ -3,7 +3,12 @@ import pandas as pd
 import plotly.express as px
 import joblib
 
-model = joblib.load("fraud_model_NEW.pkl")
+@st.cache_resource
+def load_model():
+    return joblib.load("fraud_model_NEW.pkl")
+
+model = load_model()
+#---------------------
 
 st.set_page_config(
     page_title="Fraud Detection Dashboard",
