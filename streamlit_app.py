@@ -7,7 +7,13 @@ import joblib
 def load_model():
     return joblib.load("fraud_model_NEW.pkl")
 
-model = load_model()
+try:
+    model = load_model()
+    st.success("Model loaded successfully")
+except Exception as e:
+    st.error(str(e))
+    st.stop()
+# model = load_model()
 #---------------------
 
 st.set_page_config(
