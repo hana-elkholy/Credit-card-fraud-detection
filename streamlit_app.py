@@ -10,6 +10,9 @@ from sklearn.preprocessing import RobustScaler
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder
 from category_encoders import BinaryEncoder
+from sklearn.compose import ColumnTransformer
+
+
 
 @st.cache_resource
 def load_model():
