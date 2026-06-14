@@ -8,6 +8,8 @@ from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler
 from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import OneHotEncoder
+from category_encoders import BinaryEncoder
 
 @st.cache_resource
 def load_model():
