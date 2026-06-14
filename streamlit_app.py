@@ -5,6 +5,11 @@ import joblib
 
 import pickle
 
+
+model = pickle.load(open("fraud_model_NEW.pkl", "rb"))
+
+prediction = model.predict(input_df)
+
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler
@@ -15,18 +20,7 @@ from imblearn.pipeline import Pipeline as ImbPipeline
 
 from catboost import CatBoostClassifier
 
-@st.cache_resource
-def load_model():
-    return joblib.load("fraud_model_NEW.pkl")
 
-try:
-    model = load_model()
-    st.success("Model loaded successfully")
-except Exception as e:
-    st.error(str(e))
-    st.stop()
-# model = load_model()
-#---------------------
 
 st.set_page_config(
     page_title="Fraud Detection Dashboard",
