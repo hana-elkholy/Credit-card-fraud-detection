@@ -3,22 +3,17 @@ import pandas as pd
 import plotly.express as px
 import joblib
 
-import pickle
-
-
-model = pickle.load(open("fraud_model_NEW.pkl", "rb"))
-
-prediction = model.predict(input_df)
-
+from catboost import CatBoostClassifier
 from sklearn.compose import ColumnTransformer
 from sklearn.impute import SimpleImputer
 from sklearn.preprocessing import RobustScaler
-
-
 from sklearn.pipeline import Pipeline
-from imblearn.pipeline import Pipeline as ImbPipeline
 
-from catboost import CatBoostClassifier
+@st.cache_resource
+def load_model():
+    return joblib.load("fraud_model_NEW.pkl")
+
+model = load_model()
 
 
 
